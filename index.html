@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生日快乐！</title>
+    <style>
+        body {
+            background-color: #ffe6f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: '微软雅黑', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+            animation: heartbeat 1.2s infinite;
+            margin: 0 auto;
+        }
+
+        .heart:before,
+        .heart:after {
+            position: absolute;
+            content: "";
+            left: 50px;
+            top: 0;
+            width: 50px;
+            height: 80px;
+            background: #ff3f3f;
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .heart:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+
+        .text {
+            color: #ff3f3f;
+            font-size: 28px;
+            margin-top: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: textGlow 2s ease-in-out infinite;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        @keyframes textGlow {
+            0% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+            100% { opacity: 0.8; transform: scale(1); }
+        }
+
+        /* 手机适配 */
+        @media (max-width: 480px) {
+            .text {
+                font-size: 22px;
+            }
+            .heart {
+                width: 80px;
+                height: 72px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart"></div>
+        <div class="text">🎂 吴易芸诚挚地祝福吴静波和伍敏芝生日快乐 🎂</div>
+    </div>
+</body>
+</html>
